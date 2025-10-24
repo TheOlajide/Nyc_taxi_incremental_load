@@ -118,7 +118,8 @@ BEGIN
         pickups = gold.zone_summary.pickups + EXCLUDED.pickups,
         revenue_from_pickups = gold.zone_summary.revenue_from_pickups + EXCLUDED.revenue_from_pickups,
         total_tips = gold.zone_summary.total_tips + EXCLUDED.total_tips;
-
+     
+     --update metadata table for gold
     UPDATE metadata.last_load_period
     SET last_load_time = CURRENT_TIMESTAMP
     WHERE schema_type = 'gold';
